@@ -2,23 +2,27 @@ package stepDefs;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 import pages.LoginPage;
-import utilities.ConfigurationReader;
 import utilities.WDController;
 
 public class Deneme {
 
+
     public static void main(String[] args) {
-        WDController.getDriver().get(ConfigurationReader.getProperty("qa_url"));
 
-        LoginPage lp = new LoginPage();
+        WDController.getDriver().get("https://gmibank.com/");
+        LoginPage login = new LoginPage();
 
-        WDController.waitAndClick( lp.loginDropdown , 10);
+        WDController.waitAndClick(login.loginDropdown);
 
-        //Hello everyone
-        //welcome everyone
+        WDController.waitAndClick(login.signInButton, 10);
+
+
+
+
+
 
 
 
@@ -26,6 +30,21 @@ public class Deneme {
 
 
     }
+
+
+    public static WebDriver getDriver(String browser){
+
+        if(browser.equalsIgnoreCase("chrome")){
+            return new ChromeDriver();
+        }else if (browser.equalsIgnoreCase("firefox")){
+            return new FirefoxDriver();
+        }
+
+        return null;
+
+
+    }
+
 
 
 
