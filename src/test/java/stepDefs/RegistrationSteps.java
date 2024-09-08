@@ -28,7 +28,7 @@ public class RegistrationSteps {
     public void user_navigates_to_registration_page() {
         rp = new RegistrationPage();
 
-        rp.loginDropdown.click();
+
         WDController.waitAndClick(rp.loginDropdown);
 
         WDController.waitAndClick(rp.registerNavigation);
@@ -39,6 +39,7 @@ public class RegistrationSteps {
     public void user_provides_number(String ssn) {
 
         WDController.waitAndSendText(rp.ssnTextbox, ssn);
+
 
 
         registrant.setSsn(ssn);

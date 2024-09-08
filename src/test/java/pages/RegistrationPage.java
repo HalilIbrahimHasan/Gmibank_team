@@ -47,7 +47,7 @@ public class RegistrationPage extends CommonPageElements{
     @FindBy(xpath = "//*[contains(text(),'Registration saved!')]")
     public WebElement successMessage;
 
-    @FindBy(xpath = "(//*[text()='Register'])[1]")
+    @FindBy(xpath = "//*[text()='Register']")
     public WebElement registerNavigation;
 
 

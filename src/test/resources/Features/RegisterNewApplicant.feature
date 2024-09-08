@@ -24,4 +24,4 @@ Feature: generate new applicants
 
       Examples: User registration data
       |ssn|firstname|lastname|address|phone|username|email|password|passwordCon|
-      |200-37-8594|Arya|Stark|maden way|463-372-4637|mellowy|mellowy@gmail.com|Stark2000+|Stark2000+|
+      |463-37-8594|Arya|Stark|maden way|463-372-4637|gmiusers|hellolowy@gmail.com|Stark2000+|Stark2000+|
