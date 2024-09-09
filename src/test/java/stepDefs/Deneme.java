@@ -65,6 +65,8 @@ public class Deneme {
     //kodlarimiz hazir ise
     //git push
 
+    //Note: yukaridaki bilgileri git kullaniminda  surekli kullanacagimiz icin not dustuk
+
 
 
 }
