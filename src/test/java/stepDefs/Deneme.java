@@ -46,7 +46,24 @@ public class Deneme {
     }
 
 
+     //When I use git, I need to use only my branch and make updates on my branch
+    // Sabah ilk is checkout to master/develop
+    //git pull yapiyoruz: dikkat etmemiz gereken yeni updateler var mi?
+    //Eger varsa checkout to my branch / then git merge master, calismaya devam veya kendi kodumuzu remote branchimize tasiyoruz
+    //Eger update yoksa, calismaya devam ve kendi updatelerimizi kendi remote branchimize push ediyoruz
 
+    ///Komutlar ile
+    //ilk is
+    // git checkout master
+    //2
+    //git pull
+    //3. eger master da yeni update varsa
+    //git checkout myBranch
+    //git merge master
+    //4.eger master da update yoksa
+    //git checkout myBranch
+    //kodlarimiz hazir ise
+    //git push
 
 
 
