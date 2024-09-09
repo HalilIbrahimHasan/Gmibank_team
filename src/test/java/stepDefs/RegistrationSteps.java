@@ -38,7 +38,7 @@ public class RegistrationSteps {
     @Given("user provides {string} number")
     public void user_provides_number(String ssn) {
 
-        WDController.waitAndSendText(rp.ssnTextbox, ssn);
+        WDController.waitAndSendTextAndSubmit(rp.ssnTextbox, ssn);
 
 
 
@@ -104,6 +104,18 @@ public class RegistrationSteps {
         System.out.println(registrant);
     }
 
+    @Then("user validates ssn")
+    public void user_validates_ssn() {
+           String value = WDController.waitAndGetText(rp.ssnValidation, 5);
 
+           Assert.assertNotEquals(value,"Ssn is invalid.");
+    }
+
+    @Then("user validates  invalid ssn")
+    public void user_validates_invalid_ssn() {
+        String value = WDController.waitAndGetText(rp.ssnValidation, 5);
+
+        Assert.assertEquals(value,"Ssn is invalid.");
+    }
 
 }

@@ -92,6 +92,16 @@ public abstract class WDController {
             }
         }
     }
+    public static void waitAndSendTextAndSubmit(WebElement element,String text) {
+        for (int i = 0; i < timeout; i++) {
+            try {
+                element.sendKeys(text + Keys.ENTER);
+                return;
+            } catch (WebDriverException e) {
+                wait(1);
+            }
+        }
+    }
     public static void waitAndSendText(WebElement element,String text) {
         for (int i = 0; i < timeout; i++) {
             try {

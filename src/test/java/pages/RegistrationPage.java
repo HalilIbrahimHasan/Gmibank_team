@@ -51,6 +51,10 @@ public class RegistrationPage extends CommonPageElements{
     public WebElement registerNavigation;
 
 
+    @FindBy(xpath = "//*[@name='ssn']/following::div")
+    public WebElement ssnValidation;
+
+
 
 
 
