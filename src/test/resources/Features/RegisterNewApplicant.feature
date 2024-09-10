@@ -24,7 +24,7 @@ Feature: generate new applicants
 
       Examples: User registration data
       |ssn|firstname|lastname|address|phone|username|email|password|passwordCon|
-      |463-37-8594|Arya|Stark|maden way|463-372-4637|gmiusers|hellolowy@gmail.com|Stark2000+|Stark2000+|
+      |746-99-37-8594|okumus|xxxx|mad way|757-372-4637|ufukokumus|hello@gmail.com|Ufukok82|Ufukok82|
 
 
    @US_0001

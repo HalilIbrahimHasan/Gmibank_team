@@ -67,6 +67,6 @@ public class Deneme {
 
     //Note: yukaridaki bilgileri git kullaniminda  surekli kullanacagimiz icin not dustuk
 
-
+    // herkese meraba
 
 }
