@@ -6,8 +6,8 @@ import io.cucumber.junit.CucumberOptions;
 @CucumberOptions(
         features = "src/test/resources/Features",
         glue = "stepDefs",
-        tags = " @TC_00002",
-        dryRun = true,
+        tags = "@US_0001",
+        dryRun = false,
         plugin = {"pretty", "html:target/XMLReports/Report.xml",
                 "json:target/JSONReports/report.json",
                 "html:target/HTMLReports/report.html",

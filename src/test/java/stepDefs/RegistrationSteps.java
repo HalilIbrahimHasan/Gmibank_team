@@ -106,16 +106,57 @@ public class RegistrationSteps {
 
     @Then("user validates ssn")
     public void user_validates_ssn() {
-           String value = WDController.waitAndGetText(rp.ssnValidation, 5);
 
-           Assert.assertNotEquals(value,"Ssn is invalid.");
+        String value = WDController.waitAndGetText(rp.ssnInvalidFeedback, 5);
+        Assert.assertNotEquals(value,"Ssn is invalid.");
     }
 
     @Then("user validates  invalid ssn")
     public void user_validates_invalid_ssn() {
-        String value = WDController.waitAndGetText(rp.ssnValidation, 5);
 
+        String value = WDController.waitAndGetText(rp.ssnInvalidFeedback, 5);
         Assert.assertEquals(value,"Ssn is invalid.");
     }
 
+    @Then("user validates first name")
+    public void userValidatesFirstName() {
+
+        String value = WDController.waitAndGetText(rp.firstnameInvalidFeedback, 5);
+        Assert.assertNotEquals(value,"Please enter your first name.");
+    }
+
+    @Then("user validates last name")
+    public void userValidatesLastName() {
+
+        String value = WDController.waitAndGetText(rp.lastnameInvalidFeedback, 5);
+        Assert.assertNotEquals(value,"Please enter your last name.");
+    }
+
+    @Then("user validates address")
+    public void userValidatesAddress() {
+
+        String value = WDController.waitAndGetText(rp.addressInvalidFeedback, 5);
+        Assert.assertNotEquals(value,"Please enter your address.");
+    }
+
+    @Then("user validates mobile phone")
+    public void userValidatesMobilePhone() {
+
+        String value = WDController.waitAndGetText(rp.mobilephoneInvalidFeedback, 5);
+        Assert.assertNotEquals(value,"Your mobile phone number is invalid.");
+    }
+
+    @Then("user validates username")
+    public void userValidatesUsername() {
+
+        String value = WDController.waitAndGetText(rp.usernameInvalidFeedback, 5);
+        Assert.assertNotEquals(value,"Your username is required.");
+    }
+
+    @Then("user validates email")
+    public void userValidatesEmail() {
+
+        String value = WDController.waitAndGetText(rp.emailInvalidFeedback, 5);
+        Assert.assertNotEquals(value,"Your email is invalid.");
+    }
 }
