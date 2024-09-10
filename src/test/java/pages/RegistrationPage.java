@@ -50,13 +50,26 @@ public class RegistrationPage extends CommonPageElements{
     @FindBy(xpath = "//*[text()='Register']")
     public WebElement registerNavigation;
 
-
     @FindBy(xpath = "//*[@name='ssn']/following::div")
-    public WebElement ssnValidation;
+    public WebElement ssnInvalidFeedback;
 
 
+    @FindBy(xpath = "//*[@name='firstname']/following::div")
+    public WebElement firstnameInvalidFeedback;
 
+    @FindBy(xpath = "//*[@name='lastname']/following::div")
+    public WebElement lastnameInvalidFeedback;
 
+    @FindBy(xpath = "//*[@name='address']/following::div")
+    public WebElement addressInvalidFeedback;
 
+    @FindBy(xpath = "//*[@name='mobilephone']/following::div")
+    public WebElement mobilephoneInvalidFeedback;
+
+    @FindBy(xpath = "//*[@name='username']/following::div")
+    public WebElement usernameInvalidFeedback;
+
+    @FindBy(xpath = "//*[@name='email']/following::div")
+    public WebElement emailInvalidFeedback;
 
 }
