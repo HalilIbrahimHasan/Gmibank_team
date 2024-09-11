@@ -17,6 +17,8 @@ public class Registrant {
 
     private String password;
 
+    private String cancelButton;
+
     public Registrant(String ssn, String firstName, String lastName, String address, String phoneNumber, String userName, String email, String password) {
         this.ssn = ssn;
         this.firstName = firstName;
