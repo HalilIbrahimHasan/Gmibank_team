@@ -16,7 +16,7 @@ public class RegistrationSteps {
 
    Registrant registrant = new Registrant();
 
-   RegistrationPage rp;
+   RegistrationPage rp = new RegistrationPage();
 
 
 
@@ -159,4 +159,43 @@ public class RegistrationSteps {
         String value = WDController.waitAndGetText(rp.emailInvalidFeedback, 5);
         Assert.assertNotEquals(value,"Your email is invalid.");
     }
+
+    @Given("user provides a {string} with at least seven chars as lowercase")
+    public void user_provides_a_with_at_least_seven_chars_as_lowercase(String password) {
+        WDController.waitAndSendText(rp.firstPasswordTextbox, password);
+        Assert.assertTrue( "The password strength is not matched!", rp.passwordStOne.isDisplayed());
+        rp.firstPasswordTextbox.clear();
+    }
+    @Given("user provides a {string} with seven c  + upper case")
+    public void user_provides_a_with_seven_c_upper_case(String password) {
+        WDController.waitAndSendText(rp.firstPasswordTextbox, password);
+        Assert.assertTrue( "The password strength is not matched!", rp.passwordStTwo.isDisplayed());
+        rp.firstPasswordTextbox.clear();
+    }
+    @Given("user provides a {string} with seven c + up c  & num")
+    public void user_provides_a_with_seven_c_up_c_num(String password) {
+        WDController.waitAndSendText(rp.firstPasswordTextbox, password);
+        Assert.assertTrue( "The password strength is not matched!", rp.passwordStThree.isDisplayed());
+        rp.firstPasswordTextbox.clear();
+    }
+    @Given("user provides a {string} with seven c + up c  num & special char")
+    public void user_provides_a_with_seven_c_up_c_num_special_char(String password) {
+        WDController.waitAndSendText(rp.firstPasswordTextbox, password);
+        Assert.assertTrue( "The password strength is not matched!", rp.passwordStFour.isDisplayed());
+        rp.firstPasswordTextbox.clear();
+    }
+
+    @Given("user provides a {string}")
+    public void user_provides_a(String password) {
+
+        WDController.waitAndSendText(rp.firstPasswordTextbox, password);
+
+    }
+    @Then("user validates {string}")
+    public void user_validates(String sLevel) {
+
+      rp.passwordValidation(Integer.parseInt(sLevel));
+    }
+
+
 }

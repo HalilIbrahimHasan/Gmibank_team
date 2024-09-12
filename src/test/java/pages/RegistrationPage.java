@@ -1,5 +1,6 @@
 package pages;
 
+import org.junit.Assert;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -71,5 +72,35 @@ public class RegistrationPage extends CommonPageElements{
 
     @FindBy(xpath = "//*[@name='email']/following::div")
     public WebElement emailInvalidFeedback;
+
+    @FindBy(xpath = "//*[@style='background-color: rgb(255, 0, 0);']")
+    public WebElement passwordStOne;
+    @FindBy(xpath = "//*[@style='background-color: rgb(255, 153, 0);']")
+    public WebElement passwordStTwo;
+
+    @FindBy(xpath = "//*[@style='background-color: rgb(255, 255, 0);']")
+    public WebElement passwordStThree;
+
+    @FindBy(xpath = "//*[@style='background-color: rgb(0, 255, 0);']")
+    public WebElement passwordStFour;
+
+
+
+
+
+    public void passwordValidation(int sLevel){
+
+        if(sLevel == 1)
+            Assert.assertTrue( "The password strength is not matched!", passwordStOne.isDisplayed());
+        if(sLevel == 2)
+            Assert.assertTrue( "The password strength is not matched!", passwordStTwo.isDisplayed());
+        if(sLevel == 3)
+            Assert.assertTrue( "The password strength is not matched!", passwordStThree.isDisplayed());
+        if(sLevel == 4)
+            Assert.assertTrue( "The password strength is not matched!", passwordStFour.isDisplayed());
+
+        firstPasswordTextbox.clear();
+
+    }
 
 }
