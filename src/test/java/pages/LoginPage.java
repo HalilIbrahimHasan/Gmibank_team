@@ -26,5 +26,14 @@ public class LoginPage extends CommonPageElements{
     @FindBy(xpath = "//*[contains(text(),'My Opera')]")
     public WebElement navigatedPage;
 
+    @FindBy(xpath = "//*[text()='Cancel']")
+    public WebElement cancelButton;
+
+    @FindBy ( xpath= "//*[@id=\"app-header\"]/nav/div")
+    public WebElement homePage;
+
+    @FindBy ( xpath= "//*[@class='modal-title']/span")
+    public WebElement signInValidation;
+
 
 }

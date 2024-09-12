@@ -111,3 +111,33 @@ Feature: generate new applicants
     Examples: test data
       |ssn|
       |362-37-3|
+
+  @US_000003
+  @TC_000008
+  Scenario Outline: user checks password strength
+    Given user navigates to registration page
+    And user provides a "<password>" with at least seven chars as lowercase
+    And user provides a "<password2>" with seven c  + upper case
+    And user provides a "<password3>" with seven c + up c  & num
+    And user provides a "<password4>" with seven c + up c  num & special char
+    Examples: password data validation
+    |password|password2|password3|password4|
+    |asdfghj |asdfhjU  |asdfgU7  |asdfU6!  |
+
+
+    @US_000003
+   @TC_000009
+  Scenario Outline: user checks password strength 2. coverage
+    Given user navigates to registration page
+    And user provides a "<password>"
+    Then user validates "<sLevel>"
+
+    Examples: password strength data validation
+    |password|sLevel|
+    |asdfghj |1     |
+    |asdfhjU |2     |
+    |asdfgU7 |3     |
+    |asdfU6! |4     |
+
+
+
