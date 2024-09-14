@@ -18,7 +18,7 @@ public class ConfigurationReader {
             //To open a file, we use FileInputStream
             FileInputStream file=new FileInputStream(path);//opening configuration.properties
             properties=new Properties();//We are initializing the properties file
-            properties.load(file);//loading the file
+            properties.load(file);//loading the file : browser : chrome url : gmibank.com
             file.close();//closing the file
         } catch (Exception e) {
             //System.out.println("Path is not found");
