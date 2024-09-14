@@ -69,6 +69,17 @@ public abstract class WDController {
             }
         }
     }
+
+    public static void waitAndClick( String text) {
+        for (int i = 0; i < timeout; i++) {
+            try {
+                WDController.getDriver().findElement(By.xpath("//*[text()='"+text+"']")).click();
+                return;
+            } catch (WebDriverException e) {
+                wait(1);
+            }
+        }
+    }
     public static void waitAndClick(WebElement element) {
         for (int i = 0; i < timeout; i++) {
             try {
@@ -308,4 +319,64 @@ public abstract class WDController {
         WDController.getDriver().get(url);
     }
 
+    public static void scrollEndOfPage(){
+        // Scroll to the bottom of the page
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("window.scrollTo(0, document.body.scrollHeight);");
+    }
+
+    public static void clickElement(By locator, int timeoutInSeconds) {
+        try {
+            WebDriverWait wait = new WebDriverWait(WDController.getDriver(), Duration.ofSeconds(timeoutInSeconds));
+            WebElement element = wait.until(ExpectedConditions.elementToBeClickable(locator));
+            element.click();
+        } catch (TimeoutException e) {
+            System.out.println("Element not clickable within timeout: " + e.getMessage());
+        } catch (org.openqa.selenium.NoSuchElementException e) {
+            System.out.println("Element not found: " + e.getMessage());
+        } catch (ElementClickInterceptedException e) {
+            System.out.println("Element click intercepted: " + e.getMessage());
+        } catch (Exception e) {
+            System.out.println("An error occurred while clicking the element: " + e.getMessage());
+        }
+    }
+
+    public static void clickElement(WebElement element, int timeoutInSeconds) {
+        try {
+            WebDriverWait wait = new WebDriverWait(WDController.getDriver(), Duration.ofSeconds(timeoutInSeconds));
+            wait.until(ExpectedConditions.elementToBeClickable(element));
+            element.click();
+        } catch (TimeoutException e) {
+            System.out.println("Element not clickable within timeout: " + e.getMessage());
+        } catch (org.openqa.selenium.NoSuchElementException e) {
+            System.out.println("Element not found: " + e.getMessage());
+        } catch (ElementClickInterceptedException e) {
+            System.out.println("Element click intercepted: " + e.getMessage());
+        } catch (Exception e) {
+            System.out.println("An error occurred while clicking the element: " + e.getMessage());
+        }
+    }
+
+    public static void clickElement(WebElement element) {
+        try {
+            WebDriverWait wait = new WebDriverWait(WDController.getDriver(), Duration.ofSeconds(5));
+            wait.until(ExpectedConditions.elementToBeClickable(element));
+            element.click();
+        } catch (TimeoutException e) {
+            System.out.println("Element not clickable within timeout: " + e.getMessage());
+        } catch (org.openqa.selenium.NoSuchElementException e) {
+            System.out.println("Element not found: " + e.getMessage());
+        } catch (ElementClickInterceptedException e) {
+            System.out.println("Element click intercepted: " + e.getMessage());
+        } catch (Exception e) {
+            System.out.println("An error occurred while clicking the element: " + e.getMessage());
+        }
+    }
+
+    public static void clickByText(String text){
+
+        WDController.getDriver().findElement(
+                By.xpath("//*[text()='"+text+"']")).click();
+
+    }
 }

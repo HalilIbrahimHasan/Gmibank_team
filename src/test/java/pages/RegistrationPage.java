@@ -9,7 +9,6 @@ import utilities.WDController;
 public class RegistrationPage extends CommonPageElements{
 
     public RegistrationPage(){
-
         PageFactory.initElements(WDController.getDriver(), this);
     }
     @FindBy(id = "ssn")
