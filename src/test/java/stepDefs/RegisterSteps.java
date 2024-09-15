@@ -9,11 +9,12 @@ import utilities.WDController;
 
 import java.time.Duration;
 
+import static stepDefs.BaseSteps.rp;
 import static utilities.WDController.clickByText;
 
 public class RegisterSteps {
 
-    RegistrationPage rp = new RegistrationPage();
+
 
 
 

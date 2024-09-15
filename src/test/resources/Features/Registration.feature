@@ -23,10 +23,7 @@
        Examples: User registration data
          |ssn|firstname|lastname|address|phone|username|email|password|passwordCon|
          |473-99-37-8594|talent|lab|hello way|362-372-4637|talentlab|tale@gmail.com|Talen1234!|Talen1234!|
-         |473-99-37-8594|talent|lab|hello way|362-372-4637|talentlab|tale@gmail.com|Talen1234!|Talen1234!|
-         |473-99-37-8594|talent|lab|hello way|362-372-4637|talentlab|tale@gmail.com|Talen1234!|Talen1234!|
-         |473-99-37-8594|talent|lab|hello way|362-372-4637|talentlab|tale@gmail.com|Talen1234!|Talen1234!|
-         |473-99-37-8594|talent|lab|hello way|362-372-4637|talentlab|tale@gmail.com|Talen1234!|Talen1234!|
+
 
 
 

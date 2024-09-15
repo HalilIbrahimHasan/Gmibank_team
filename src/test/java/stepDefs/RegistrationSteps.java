@@ -13,13 +13,15 @@ import utilities.WDController;
 
 import java.time.Duration;
 
+import static stepDefs.BaseSteps.registrant;
+import static stepDefs.BaseSteps.rp;
 import static utilities.TxtWriter.txtRegistrantWriter;
 
 public class RegistrationSteps {
 
-   Registrant registrant = new Registrant();
 
-   RegistrationPage rp = new RegistrationPage();
+
+
 
    Faker faker = new Faker();
 
@@ -32,8 +34,6 @@ public class RegistrationSteps {
     }
     @Given("user navigates to registration page")
     public void user_navigates_to_registration_page() {
-        rp = new RegistrationPage();
-
 
         WDController.waitAndClick(rp.loginDropdown);
 

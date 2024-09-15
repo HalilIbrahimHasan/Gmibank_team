@@ -11,8 +11,10 @@ import utilities.WDController;
 
 import java.time.Duration;
 
+import static stepDefs.BaseSteps.lp;
+
 public class LoginSteps {
-    LoginPage lp;
+
 
     @Given("user navigates to login page")
     public void user_navigates_to_login_page() {
@@ -22,7 +24,7 @@ public class LoginSteps {
 
     @Given("user provides {string} and {string}")
     public void user_provides_and(String username, String password) {
-        lp = new LoginPage();
+
         Assert.assertTrue(WDController.waitForClickablility(Duration.ofSeconds(5),lp.loginDropdown));
         WDController.waitAndClick(lp.loginDropdown);
 

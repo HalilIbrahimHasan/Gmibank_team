@@ -1,6 +1,6 @@
 package utilities;
 
-import io.github.bonigarcia.wdm.WebDriverManager;
+
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -378,5 +378,9 @@ public abstract class WDController {
         WDController.getDriver().findElement(
                 By.xpath("//*[text()='"+text+"']")).click();
 
+    }
+
+    public static void refreshThePage(){
+        driver.navigate().refresh();
     }
 }
