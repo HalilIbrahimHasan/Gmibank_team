@@ -15,14 +15,14 @@ public class Hooks {
 
         initPages();
 
-        videoRecord = new VideoRecord();
-        videoRecord.startRecording();
+ //       videoRecord = new VideoRecord();
+ //       videoRecord.startRecording();
 
     }
 
     @After
     public void tearDown() throws Exception {
 
-        videoRecord.stopRecording();
+ //       videoRecord.stopRecording();
     }
 }
