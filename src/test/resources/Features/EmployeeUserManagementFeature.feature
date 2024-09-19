@@ -19,3 +19,21 @@ Feature: employee user management activities
     Given user clicks and navigates to "My Operations"
     And user clicks and navigates to "Manage Customers"
     Then user validates customer management page
+
+  Scenario Outline: navigate to create a customer page
+    Given user clicks create a new customer button
+    Then user clicks back button
+
+
+
+
+
+
+
+
+
+
+
+
+
+

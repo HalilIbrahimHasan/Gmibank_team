@@ -22,8 +22,11 @@ public class EmployeeUserManagementPage {
     @FindBy(xpath = "//*[text()='Manage Customers']")
     public WebElement employeeManageCustomersPortal;
 
-    @FindBy(xpath = "//*[text()='Create a new Customer']")
-    public WebElement employeeCreatecustomerPortal;
+ //   @FindBy(xpath = "//*[text()='Create a new Customer']")
+    @FindBy(id = "jh-create-entity")
+    public WebElement employeeCreateCustomerPortal;
+
+
 
     @FindAll({@FindBy(xpath = "//*[@class='page-item']")})
     public List<WebElement> allPages ;
@@ -63,6 +66,63 @@ public class EmployeeUserManagementPage {
 
     @FindAll({@FindBy(xpath = "//*[@class='btn-group flex-btn-group-container']//*[text()='Delete']")})
     public List<WebElement> allDeleteButtons ;
+
+    @FindBy(id = "search-ssn")
+    public WebElement searchSsnTextbox;
+
+    @FindBy(name = "firstName")
+    public WebElement firstNameTextbox;
+
+    @FindBy(name = "lastName")
+    public WebElement lastNameTextbox;
+
+    @FindBy(name = "middleInitial")
+    public WebElement middleInitialTextbox;
+
+    @FindBy(name = "email")
+    public WebElement emailTextbox;
+
+    @FindBy(name = "mobilePhoneNumber")
+    public WebElement mobilePhoneNumberTextbox;
+
+    @FindBy(name = "phoneNumber")
+    public WebElement phoneNumberTextbox;
+
+    @FindBy(name = "zipCode")
+    public WebElement zipCodeTextbox;
+
+    @FindBy(name = "address")
+    public WebElement addressTextbox;
+
+    @FindBy(name = "city")
+    public WebElement cityTextbox;
+
+    @FindBy(name = "ssn")
+    public WebElement ssnTextbox;
+
+    @FindBy(name = "createDate")
+    public WebElement createDateTextbox;
+
+    @FindBy(xpath = "//*[@name='country.id']/following::div[1]")
+    public WebElement countryDropdown;
+
+    @FindBy(name = "state")
+    public WebElement stateTextbox;
+
+    @FindBy(xpath = "//*[@name='user.id']/following::div[1]")
+    public WebElement userDropdown;
+
+    @FindBy(xpath = "//*[@name='accounts.id']/following::div[1]")
+    public WebElement accountsDropdown;
+
+    @FindBy(name = "zelleEnrolled")
+    public WebElement zelleEnrolledCheckbox;
+
+    @FindBy(id = "cancel-save")
+    public WebElement backButton;
+
+    @FindBy(id = "save-entity")
+    public WebElement saveButton;
 
 
 
