@@ -26,8 +26,6 @@ public class EmployeeUserManagementPage {
     @FindBy(id = "jh-create-entity")
     public WebElement employeeCreateCustomerPortal;
 
-
-
     @FindAll({@FindBy(xpath = "//*[@class='page-item']")})
     public List<WebElement> allPages ;
 
@@ -70,6 +68,9 @@ public class EmployeeUserManagementPage {
     @FindBy(id = "search-ssn")
     public WebElement searchSsnTextbox;
 
+   @FindBy(xpath = "//*[text()='Search']")
+   public WebElement searchButton;
+
     @FindBy(name = "firstName")
     public WebElement firstNameTextbox;
 
@@ -97,7 +98,7 @@ public class EmployeeUserManagementPage {
     @FindBy(name = "city")
     public WebElement cityTextbox;
 
-    @FindBy(name = "ssn")
+    @FindBy(id = "tp-customer-ssn")
     public WebElement ssnTextbox;
 
     @FindBy(name = "createDate")

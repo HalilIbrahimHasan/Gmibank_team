@@ -114,7 +114,7 @@ public class RegistrationSteps {
     public void user_saves_the_applicant_info() {
 
         Assert.assertTrue(WDController.waitForClickablility(Duration.ofSeconds(5),rp.successMessage));
-        txtRegistrantWriter("NewUsers.txt", registrant);
+        txtRegistrantWriter("EmpUserManUserID.txt", registrant);
     }
 
     @Then("user validates ssn")

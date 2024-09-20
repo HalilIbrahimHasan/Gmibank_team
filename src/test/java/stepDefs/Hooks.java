@@ -3,6 +3,7 @@ package stepDefs;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
 import utilities.VideoRecord;
+import utilities.WDController;
 
 import static stepDefs.BaseSteps.initPages;
 
@@ -23,6 +24,7 @@ public class Hooks {
     public void tearDown() throws Exception {
 
  //       videoRecord.stopRecording();
+ //       WDController.getDriver().quit();
 
     }
 
