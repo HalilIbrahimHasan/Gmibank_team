@@ -8,7 +8,7 @@ import utilities.WDController;
 
 import java.util.List;
 
-public class EmployeeUserManagementPage {
+public class EmployeeUserManagementPage extends CommonPageElements {
 
     public EmployeeUserManagementPage() {
         super();
@@ -21,10 +21,6 @@ public class EmployeeUserManagementPage {
 
     @FindBy(xpath = "//*[text()='Manage Customers']")
     public WebElement employeeManageCustomersPortal;
-
- //   @FindBy(xpath = "//*[text()='Create a new Customer']")
-    @FindBy(id = "jh-create-entity")
-    public WebElement employeeCreateCustomerPortal;
 
     @FindAll({@FindBy(xpath = "//*[@class='page-item']")})
     public List<WebElement> allPages ;
@@ -104,7 +100,7 @@ public class EmployeeUserManagementPage {
     @FindBy(name = "createDate")
     public WebElement createDateTextbox;
 
-    @FindBy(xpath = "//*[@name='country.id']/following::div[1]")
+    @FindBy(name = "country.id")
     public WebElement countryDropdown;
 
     @FindBy(name = "state")

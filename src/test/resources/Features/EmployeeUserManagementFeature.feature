@@ -18,13 +18,31 @@ Feature: employee user management activities
     Given user clicks create a new customer button
     When user enter search "<ssn>" number
     And user clicks send button
-    Then user checks registered ssn equality with search "<ssn>"
+    And user checks registered ssn equality with search "<ssn>"
     And user clicks back button
+    And user clicks on account menu
+    Then user clicks on sign out button
     Examples:
       | ssn |
       | 116-24-3363 |
 
+  @US010
+    @US010_TC001
+  Scenario Outline: address of customer can be created
+    Given user clicks create a new customer button
+    When user enter search "<ssn>" number
+    And user clicks send button
+    And user enters address information
+    And user enters city information
+    And user enters country information
+    And user enters state information
+    And user clicks back button
+    And user clicks on account menu
+    Then user clicks on sign out button
 
+    Examples:
+      | ssn |
+      | 116-24-3363 |
 
 
 
