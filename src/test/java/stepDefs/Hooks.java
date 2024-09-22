@@ -2,6 +2,8 @@ package stepDefs;
 
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
+import org.junit.AfterClass;
+import org.junit.jupiter.api.AfterAll;
 import utilities.VideoRecord;
 import utilities.WDController;
 
@@ -15,14 +17,24 @@ public class Hooks {
 
         initPages();
 
-        videoRecord = new VideoRecord();
-        videoRecord.startRecording();
+ //       videoRecord = new VideoRecord();
+ //       videoRecord.startRecording();
 
     }
 
     @After
     public void tearDown() throws Exception {
 
-        videoRecord.stopRecording();
+ //       videoRecord.stopRecording();
+ //       WDController.getDriver().quit();
+
     }
+
+    @AfterClass
+    public static void quitAll() throws Exception {
+        WDController.getDriver().quit();
+    }
+
+
+
 }

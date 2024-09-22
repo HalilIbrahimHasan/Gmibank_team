@@ -148,6 +148,21 @@ public abstract class WDController {
     }
 
 
+    public static String waitAndGetValue(WebElement element, int timeout) {
+        String text="";
+        wait(timeout);
+        for (int i = 0; i < timeout; i++) {
+            try {
+                text = element.getAttribute("value");
+                return text;
+            } catch (WebDriverException e) {
+                wait(1);
+            }
+        }
+        return null;
+    }
+
+
     //Webdriver
     //ChromeDriver
     //Iedriver
