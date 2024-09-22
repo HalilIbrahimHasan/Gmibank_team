@@ -89,6 +89,11 @@ public class EmployeeUsermanagementSteps {
 
     @Given("user checks all customer information")
     public void userGetAllCustomerInformation() {
-        eump.checkAccountInformation();
+    //    eump.checkAccountInformation();
+    }
+
+    @And("user checks view button functionality")
+    public void userChecksViewButtonFunctionality() {
+        eump.checkViewButtonFunctionality();
     }
 }

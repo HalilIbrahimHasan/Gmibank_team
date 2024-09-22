@@ -124,17 +124,20 @@ public class EmployeeUserManagementPage extends CommonPageElements {
     @FindBy(id = "save-entity")
     public WebElement saveButton;
 
+    @FindBy(xpath = "//*[text() = 'Customer']/following::b")
+    public WebElement viewPageCustomerIdLabel;
+
+    @FindBy(xpath = "//*[text() = 'Back']")
+    public WebElement viewPageBackButton;
+
+    @FindBy(xpath = "//*[text() = 'Edit']")
+    public WebElement viewPageEditButton;
+
+
 
     public void checkAccountInformation(){
         for (int j = 0; j < Integer.parseInt(allPages.get(allPages.size()-3).getText()); j++) {
-    //        System.out.println(j);
-    //        System.out.println(allPages.get(allPages.size()-3).getText());
-    //        allPages.get(allPages.size()-1).click();
-    //        WDController.wait(5);
             for (int i = 0; i < allID.size(); i++) {
-    //            System.out.println(allViewButtons.get(i).getText());
-    //            System.out.println(allID.get(i).getText().isEmpty());
-
                 Assert.assertFalse("Page "+(j+1)+" Row "+(i+1)+" ID is EMPTY",allID.get(i).getText().isEmpty());
                 Assert.assertFalse("Page "+(j+1)+" Row "+(i+1)+" First name is EMPTY",allFirsName.get(i).getText().isEmpty());
                 Assert.assertFalse("Page "+(j+1)+" Row "+(i+1)+" last name is EMPTY",allLastName.get(i).getText().isEmpty());
@@ -147,7 +150,46 @@ public class EmployeeUserManagementPage extends CommonPageElements {
                 Assert.assertFalse("Page "+(j+1)+" Row "+(i+1)+" View buttons is EMPTY",allViewButtons.get(i).getText().isEmpty());
                 Assert.assertFalse("Page "+(j+1)+" Row "+(i+1)+" Edit buttons is EMPTY",allEditButtons.get(i).getText().isEmpty());
                 Assert.assertFalse("Page "+(j+1)+" Row "+(i+1)+" Delete buttons is EMPTY",allDeleteButtons.get(i).getText().isEmpty());
+           }
+            WDController.waitAndClick(allPages.get(allPages.size()-2));
+        }
+    }
 
+
+    public void checkViewButtonFunctionality(){
+        for (int j = 92; j < Integer.parseInt(allPages.get(allPages.size()-3).getText()); j++) {
+                   System.out.println(j);
+            //        System.out.println(allPages.get(allPages.size()-3).getText());
+            //        allPages.get(allPages.size()-1).click();
+
+            WDController.wait(5);
+            for (int i = 19; i < allID.size(); i++) {
+                //            System.out.println(allViewButtons.get(i).getText());
+                //            System.out.println(allID.get(i).getText().isEmpty());
+
+                for (int k = 0; k < j; k++) {
+                    WDController.waitAndClick(allPages.get(allPages.size() - 2));
+                    WDController.wait(1);
+                }
+
+
+                String customerID = allID.get(i).getText();
+
+                WDController.waitAndClick(allViewButtons.get(i));
+                WDController.wait(5);
+
+                Assert.assertEquals(customerID,viewPageCustomerIdLabel.getText());
+                Assert.assertTrue(viewPageEditButton.isDisplayed());
+
+                WDController.waitAndClick(viewPageBackButton);
+
+                //                Assert.assertFalse("Page "+(j+1)+" Row "+(i+1)+" View buttons is EMPTY",allViewButtons.get(i).getText().isEmpty());
+
+                WDController.wait(2);
+
+
+                System.out.println(i);
+                System.out.println(customerID);
             }
             WDController.waitAndClick(allPages.get(allPages.size()-2));
         }

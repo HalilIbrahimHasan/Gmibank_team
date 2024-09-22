@@ -49,7 +49,7 @@ Feature: employee user management activities
     @US012_TC001
   Scenario: customer module should show up the account information for all customers
     Given user checks all customer information
-
+    And user checks view button functionality
 
 
 
