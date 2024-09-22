@@ -87,4 +87,8 @@ public class EmployeeUsermanagementSteps {
         WDController.waitAndClick(eump.signOutButton);
     }
 
+    @Given("user checks all customer information")
+    public void userGetAllCustomerInformation() {
+        eump.checkAccountInformation();
+    }
 }
