@@ -6,7 +6,7 @@ import io.cucumber.junit.CucumberOptions;
 @CucumberOptions(
         features = "src/test/resources/Features",
         glue = "stepDefs",
-        tags = "@US012_TC001",
+        tags = "@EndToEndTest",
         dryRun = false,
         plugin = {"pretty", "html:target/XMLReports/Report.xml",
                 "json:target/JSONReports/report.json",

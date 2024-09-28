@@ -13,8 +13,7 @@ import utilities.WDController;
 
 import java.time.Duration;
 
-import static stepDefs.BaseSteps.registrant;
-import static stepDefs.BaseSteps.rp;
+import static stepDefs.BaseSteps.*;
 import static utilities.TxtWriter.txtRegistrantWriter;
 
 public class RegistrationSteps {
@@ -29,7 +28,8 @@ public class RegistrationSteps {
 
 
     @Given("user navigates to lending page")
-    public void user_navigates_to_lending_page() {
+    public void user_navigates_to_lending_page() throws Exception {
+        videoRecord.startRecording();
         WDController.getDriver().get(ConfigurationReader.getProperty("qa_url"));
     }
     @Given("user navigates to registration page")

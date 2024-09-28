@@ -1,5 +1,6 @@
 package stepDefs;
 
+import baseUrls.GMIBaseUrl;
 import io.cucumber.java.en.Given;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -24,6 +25,7 @@ public class RegisterSteps {
     }
     @Given("user clicks on {string}")
     public void user_clicks_on(String text) {
+
         WDController.clickByText(text);
     }
     @Given("user provides a text {string}")

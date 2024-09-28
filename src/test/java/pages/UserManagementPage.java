@@ -80,7 +80,7 @@ public class UserManagementPage {
         }else if(role.equalsIgnoreCase(Role.ROLE_ADMIN.toString())){
             WDController.selectAnItemFromDropdown(roleDropdown,Role.ROLE_ADMIN.toString() );
         }else if(role.equalsIgnoreCase(Role.ROLE_CUSTOMER.toString())){
-            WDController.selectAnItemFromDropdown(roleDropdown,Role.ROLE_CUSTOMER.toString() );
+//            WDController.selectAnItemFromDropdown(roleDropdown,Role.ROLE_CUSTOMER.toString() );
         }else if(role.equalsIgnoreCase(Role.ROLE_EMPLOYEE.toString())){
             WDController.selectAnItemFromDropdown(roleDropdown,Role.ROLE_EMPLOYEE.toString() );
         }else if(role.equalsIgnoreCase(Role.ROLE_MANAGER.toString())){

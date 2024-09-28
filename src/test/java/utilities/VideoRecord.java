@@ -17,7 +17,7 @@ import static org.monte.media.VideoFormatKeys.*;
 public class VideoRecord {
 
   public static final String USER_DIR = "user.dir";
-  public static final String DOWNLOADED_FILES_FOLDER = "downloads";
+  public static final String DOWNLOADED_FILES_FOLDER = "src/test/resources/test_data";
   private ScreenRecorder screenRecorder;
   private File file =
           new File(System.getProperty(USER_DIR) + File.separator + DOWNLOADED_FILES_FOLDER);
@@ -53,7 +53,7 @@ public class VideoRecord {
     File output = null;
 
     this.screenRecorder.stop();
-    output = new File(System.getProperty("user.dir") + "\\files\\local.avi");
+    output = new File(System.getProperty("user.dir")+ConfigurationReader.getProperty("test_data_path") + "recordings/automationRec.avi");
 
     System.out.println("Video output file: " + output);
 

@@ -50,4 +50,4 @@ Feature: user management activities
 
       Examples: find and activate user data
       |role|
-      |ROLE_CUSTOMER|
+      |ROLE_Customer|

@@ -395,7 +395,24 @@ public abstract class WDController {
 
     }
 
+    public static void headerValueTextIN(String header, String value){
+
+        WDController.waitAndSendText(
+                WDController.getDriver().findElement(
+                        By.xpath("//*[text()='"+header+"']/following::input")) , value
+        );
+
+
+    }
+
     public static void refreshThePage(){
         driver.navigate().refresh();
+    }
+
+    public static void validateToaster(String text){
+        WDController.waitForClickablility(
+                WDController.getDriver().findElement(
+                        By.xpath("//*[contains(text(),'"+text+"')]")),Duration.ofSeconds(20)
+        );
     }
 }

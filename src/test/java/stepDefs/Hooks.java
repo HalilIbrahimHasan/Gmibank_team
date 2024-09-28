@@ -3,36 +3,45 @@ package stepDefs;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
 import org.junit.AfterClass;
-import org.junit.jupiter.api.AfterAll;
-import utilities.VideoRecord;
 import utilities.WDController;
 
-import static stepDefs.BaseSteps.initPages;
+import static baseUrls.GMIBaseUrl.setup;
+import static stepDefs.BaseSteps.*;
 
 public class Hooks {
 
-    VideoRecord videoRecord =null;
-    @Before
-    public void setUp() throws Exception {
+
+    @Before("AA")
+    public void setUp()  {
 
         initPages();
+
 
  //       videoRecord = new VideoRecord();
  //       videoRecord.startRecording();
 
+
     }
 
-    @After
+    @Before("@API")
+    public void setUpApi(){
+
+        setup();
+    }
+
+    @After("@userMan")
     public void tearDown() throws Exception {
 
- //       videoRecord.stopRecording();
- //       WDController.getDriver().quit();
+
+        videoRecord.stopRecording();
+
 
     }
 
     @AfterClass
     public static void quitAll() throws Exception {
         WDController.getDriver().quit();
+
     }
 
 

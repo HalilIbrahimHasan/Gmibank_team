@@ -4,8 +4,7 @@ import io.cucumber.java.en.*;
 import pages.UserManagementPage;
 import utilities.WDController;
 
-import static stepDefs.BaseSteps.registrant;
-import static stepDefs.BaseSteps.ump;
+import static stepDefs.BaseSteps.*;
 
 public class UserManagementSteps {
 
@@ -37,6 +36,7 @@ public class UserManagementSteps {
     @Then("user activates the current role")
     public void user_activates_the_current_role() {
         ump.findUserAndActivate(registrant);
+
     }
 
     @Then("user refreshes the page")
