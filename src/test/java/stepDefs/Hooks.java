@@ -11,7 +11,7 @@ import static stepDefs.BaseSteps.*;
 public class Hooks {
 
 
-    @Before("AA")
+    @Before()
     public void setUp()  {
 
         initPages();

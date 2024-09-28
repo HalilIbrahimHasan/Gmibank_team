@@ -16,7 +16,7 @@ public class TxtWriter {
 
 
     public static void txtRegistrantWriter(String fName, Registrant registrant){
-        String fileName = ConfigurationReader.getProperty("test_data_path")+fName;  // Specify the file name
+        String fileName = ConfigurationReader.getProperty("test_data_path2")+fName;  // Specify the file name
         String content = "This is the content to write into the file.";  // Content to write
 
         try {
