@@ -11,7 +11,7 @@ import static stepDefs.BaseSteps.*;
 public class Hooks {
 
 
-    @Before()
+    @Before(value = "not @CountryDB")
     public void setUp()  {
 
         initPages();
@@ -38,9 +38,10 @@ public class Hooks {
 
     }
 
-    @AfterClass
+    @After(value = "not @CountryDB")
     public static void quitAll() throws Exception {
-        WDController.getDriver().quit();
+
+            WDController.getDriver().quit();
 
     }
 

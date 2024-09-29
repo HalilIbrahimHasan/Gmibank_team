@@ -3,13 +3,11 @@ package stepDefs;
 import com.github.javafaker.Faker;
 import io.restassured.response.Response;
 import pages.*;
-import pojos.Account;
-import pojos.Customer;
+import pojos.*;
 import pages.EmployeeUserManagementPage;
 import pages.LoginPage;
 import pages.RegistrationPage;
 import pages.UserManagementPage;
-import pojos.Registrant;
 import utilities.VideoRecord;
 
 import java.util.ArrayList;
@@ -29,6 +27,8 @@ public class BaseSteps {
     protected static Customer customer = new Customer();
     protected static List<Customer> customers = new ArrayList<>();
     protected static Account account =null;
+    protected static Country country = null;
+    protected static CountryU countryU = null;
     public static List<Account> accounts = new ArrayList<>();
     protected static Faker faker = new Faker();
     protected static Response response;
@@ -43,6 +43,8 @@ public class BaseSteps {
         account = new Account();
         videoRecord = new VideoRecord();
         eump = new EmployeeUserManagementPage();
+        country = new Country();
+        countryU = new CountryU();
 
     }
 }
