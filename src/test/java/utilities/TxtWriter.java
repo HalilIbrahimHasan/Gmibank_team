@@ -1,8 +1,7 @@
 package utilities;
 
-import pojos.Account;
-import pojos.Customer;
-import pojos.Registrant;
+import org.apache.poi.ss.formula.functions.T;
+import pojos.*;
 
 import java.io.BufferedWriter;
 import java.io.FileWriter;
@@ -34,7 +33,7 @@ public class TxtWriter {
             writer.newLine();
             writer.close();
         } catch (IOException e) {
-            e.printStackTrace();  // Handle any IO exceptions
+            e.getStackTrace();  // Handle any IO exceptions
         }
     }
 
@@ -58,7 +57,7 @@ public class TxtWriter {
            }
 
         } catch (IOException e) {
-            e.printStackTrace();  // Handle any IO exceptions
+            e.getStackTrace();  // Handle any IO exceptions
         }
     }
 
@@ -80,7 +79,34 @@ public class TxtWriter {
             writer.newLine();
             writer.close();
         } catch (IOException e) {
-            e.printStackTrace();  // Handle any IO exceptions
+            e.getStackTrace();  // Handle any IO exceptions
+        }
+    }
+
+    public static void txtCountryWriter(String fName, CountryU country){
+        String fileName =System.getProperty("user.dir") + ConfigurationReader.getProperty("test_data_path")+fName;
+        try {
+            FileWriter fileWriter = new FileWriter(fileName,true);
+            BufferedWriter writer = new BufferedWriter(fileWriter);
+            writer.write(country.getId()+",");
+            writer.write(country.getName()+",");
+            writer.newLine();
+            writer.close();
+        } catch (IOException e) {
+            e.getStackTrace();
+        }
+    }
+
+    public static void txtCountryWriter(String fName, Country country){
+        String fileName =System.getProperty("user.dir") + ConfigurationReader.getProperty("test_data_path")+fName;
+        try {
+            FileWriter fileWriter = new FileWriter(fileName,true);
+            BufferedWriter writer = new BufferedWriter(fileWriter);
+            writer.write(country.getName()+",");
+            writer.newLine();
+            writer.close();
+        } catch (IOException e) {
+            e.getStackTrace();
         }
     }
 
