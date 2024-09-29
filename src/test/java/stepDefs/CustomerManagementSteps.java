@@ -7,6 +7,7 @@ import utilities.WDController;
 import java.util.ArrayList;
 
 import static stepDefs.BaseSteps.*;
+import static utilities.ReadTxtFile.readAccounts;
 import static utilities.TxtWriter.accountWriter;
 
 
@@ -31,7 +32,7 @@ public class CustomerManagementSteps {
 
     @Then("user selects accounts")
     public void user_selects_accounts() {
-        accountWriter("Accounts.txt",accounts);
+        accounts = readAccounts("Accounts.txt");
         cmp.selectAccounts(accounts);
 
 

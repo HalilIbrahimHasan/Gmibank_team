@@ -80,8 +80,8 @@ Feature: test all users
 
     Examples: test data for accounts
       |header|input|balance|amount|account|status|message|
-      |Description|checking account talentify5|Balance|200000000|CHECKING|ACTIVE|gmiBankBackendApp|
-      |Description|saving account talentify5|Balance|200000000|SAVING|ACTIVE|gmiBankBackendApp|
+      |Description|Checking account talentify11|Balance|200000000|CHECKING|ACTIVE|gmiBankBackendApp|
+      |Description|Saving account talentify11|Balance|200000000|SAVING|ACTIVE|gmiBankBackendApp|
 
 
   @customerManagement

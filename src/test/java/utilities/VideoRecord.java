@@ -17,7 +17,7 @@ import static org.monte.media.VideoFormatKeys.*;
 public class VideoRecord {
 
   public static final String USER_DIR = "user.dir";
-  public static final String DOWNLOADED_FILES_FOLDER = "src/test/resources/test_data";
+  public static final String DOWNLOADED_FILES_FOLDER = "src/test/resources/test_data/recordings/";
   private ScreenRecorder screenRecorder;
   private File file =
           new File(System.getProperty(USER_DIR) + File.separator + DOWNLOADED_FILES_FOLDER);

@@ -22,11 +22,13 @@ public class CustomerManagementPage {
     public void selectAccounts(List<Account> accounts){
 
         WDController.sleep(3000);
+        System.out.println(accounts);
         for (Account acc : accounts){
-            if(acc.getDescription() != null)
+            System.out.println(acc.getDescription());
         WDController.selectAnItemFromDropdown(userAccounts,acc.getDescription() );
             System.out.println("accounts: " +acc);
-        }}
+        }
+   }
 
 
 }

@@ -1,5 +1,6 @@
 package utilities;
 
+import pojos.Account;
 import pojos.Customer;
 
 import java.io.BufferedReader;
@@ -79,6 +80,29 @@ public class ReadTxtFile {
             e.printStackTrace();
         }
         return allCustomers;
+    }
+
+    public static List<Account> readAccounts(String filePath) {
+        // Initialize FileReader and BufferedReader
+        List<Account> accounts = new ArrayList<>();
+        try {
+            FileReader fileReader = new FileReader(ConfigurationReader.getProperty("test_data_path2")+filePath);
+            BufferedReader bufferedReader = new BufferedReader(fileReader);
+
+            String line;
+
+            // Read file line by line
+            while ((line = bufferedReader.readLine()) != null) {
+                Account account = new Account();
+                account.setDescription(line.replace(",", ""));
+                accounts.add(account);
+            }
+
+        } catch (IOException e) {
+            // Handle any IO exceptions
+            System.err.println("Error reading file: " + e.getMessage());
+        }
+        return accounts;
     }
 
 
