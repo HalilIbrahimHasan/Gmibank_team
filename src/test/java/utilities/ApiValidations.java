@@ -35,12 +35,14 @@ public class ApiValidations {
         // Convert DataTable to a List of Lists (each row is a List)
         List<List<String>> data = dataTable.asLists(String.class);
 
+
         // Get the header row (param1, param2, param3)
         List<String> header = data.get(0);
 
         // Get the first data row (values for param1, param2, param3)
         List<String> values = data.get(1);
 
+        //api/tp-countries
         // Extract individual parameters by column index
         String param1 = values.get(0); // First column (param1)
         String param2 = values.get(1); // Second column (param2)

@@ -28,10 +28,7 @@ public class DBCustomerSteps {
     public void user_validates_all_db_data() {
 
     }
-    @Then("user prints them on the pdf and close connection")
-    public void user_prints_them_on_the_pdf_and_close_connection() {
 
-    }
 
 
 }

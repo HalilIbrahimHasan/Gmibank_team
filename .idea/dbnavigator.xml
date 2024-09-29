@@ -17,14 +17,16 @@
   </component>
   <component name="DBNavigator.Project.DatabaseConsoleManager">
     <connection id="3e68981c-c8e2-43c9-aad1-298b40a0c393">
-      <console name="Connection" type="STANDARD" schema="" session="Main"><![CDATA[SELECT * FROM tp_country;]]></console>
+      <console name="Connection" type="STANDARD" schema="" session="Main"><![CDATA[SELECT * FROM tp_customer;]]></console>
     </connection>
   </component>
   <component name="DBNavigator.Project.DatabaseEditorStateManager">
     <last-used-providers />
   </component>
   <component name="DBNavigator.Project.DatabaseFileManager">
-    <open-files />
+    <open-files>
+      <object connection-id="3e68981c-c8e2-43c9-aad1-298b40a0c393" object-ref="consoles/Connection" />
+    </open-files>
   </component>
   <component name="DBNavigator.Project.DatabaseSessionManager">
     <connection id="3e68981c-c8e2-43c9-aad1-298b40a0c393" />
