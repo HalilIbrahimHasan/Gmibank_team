@@ -1,5 +1,7 @@
 package pojos;
 
+import static utilities.TxtWriter.accountWriter;
+
 public class Account {
 
 
@@ -72,13 +74,12 @@ public class Account {
 
     public void setAccountValues(String header, String input){
         if(header.equalsIgnoreCase("Description")){
-            setDescription(input);
-        }
-        if(header.equalsIgnoreCase("Balance")){
-            setBalance(input);
+            accountWriter("Accounts.txt",  input);
         }
 
     }
+
+
 
     @Override
     public String toString() {

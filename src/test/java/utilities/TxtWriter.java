@@ -110,6 +110,23 @@ public class TxtWriter {
         }
     }
 
+    public static void accountWriter(String fName, String input ){
+        String fileName = ConfigurationReader.getProperty("test_data_path2")+fName;  // Specify the file name
+        try {
+
+                //Bu dosyayi bizim icin olusturuyor
+                FileWriter fileWriter = new FileWriter(fileName,true);
+                //Burasi olusan dosyanin icine yaziyor
+                BufferedWriter writer = new BufferedWriter(fileWriter);
+                writer.write(input + ",");
+                writer.newLine();
+                writer.close();
+
+
+        } catch (IOException e) {
+            e.getStackTrace();  // Handle any IO exceptions
+        }
+    }
 
 
 }

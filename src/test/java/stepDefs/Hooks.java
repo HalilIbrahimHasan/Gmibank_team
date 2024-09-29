@@ -41,7 +41,7 @@ public class Hooks {
     @After(value = "not @CountryDB")
     public static void quitAll() throws Exception {
 
-            WDController.getDriver().quit();
+
 
     }
 
