@@ -16,7 +16,7 @@ Feature: country api test
 
       Examples: country data
       |idJson|name|
-      |name  |TalentQA|
+      |name  |ObjectMapper|
 
 
 
@@ -31,7 +31,7 @@ Feature: country api test
 
     Examples: country data
       |id|name|
-      |197830|SamClub|
+      |197833|FunClub|
 
 
 
@@ -49,7 +49,7 @@ Feature: country api test
   Scenario: get country data
     Given user sends request with three params
       |param1|param2|param3|
-      |api|tp-countries|197829|
+      |api|tp-countries|197833|
     When user sends get request
     Then user validates country data
 

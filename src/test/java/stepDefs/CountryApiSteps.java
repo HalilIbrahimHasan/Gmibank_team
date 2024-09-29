@@ -24,6 +24,7 @@ public class CountryApiSteps extends GMIBaseUrl {
 
     @Given("user sets the base url for all apis")
     public void user_sets_the_base_url_for_all_apis() {
+
         setup();
     }
     @Given("user sets path params")
@@ -36,12 +37,14 @@ public class CountryApiSteps extends GMIBaseUrl {
     @Given("user sets the data {string} and {string}")
     public void user_sets_the_data_and(String idJson, String value) {
 
+        //{"name" : "GroupGen"} // {"name": "string"}
         country.setName(value);
 
     }
 
     @When("user sends POST request")
     public void user_sends_post_request() {
+
         response = createCountry(spec, country);
     }
 
@@ -50,7 +53,7 @@ public class CountryApiSteps extends GMIBaseUrl {
 
         response.then().assertThat().statusCode(201);
 
-
+        //validation 1
 
                 response.then().contentType(ContentType.JSON).
                         body("name",equalTo( country.getName()));
@@ -69,14 +72,17 @@ public class CountryApiSteps extends GMIBaseUrl {
         Assert.assertEquals(data.get("name"), country.getName());
 
 
-        //validation 5
-        Gson gson = new Gson();
 
+
+        //validation 5
+        Gson gson = new Gson();//json to java deserialization
+                               //java to json serialization
+        //String name = Group
+        //int id  = 123              {"name" : "Group", "id" : 123}
         CountryU countryU2 = gson.fromJson(response.asString(), CountryU.class);
         Assert.assertEquals(countryU2.getName(), country.getName());
 
         //validation 6
-
         ObjectMapper obj = new ObjectMapper();
         CountryU countryU3 = obj.readValue(response.asString(), CountryU.class);
 
@@ -170,6 +176,8 @@ public class CountryApiSteps extends GMIBaseUrl {
     @When("user validates country data")
     public void user_validates_country_data() {
         response.then().assertThat().statusCode(200);
+        CountryU countryU1 = response.as(CountryU.class);
+        System.out.println(countryU1);
     }
 
 }

@@ -415,4 +415,40 @@ public abstract class WDController {
                         By.xpath("//*[contains(text(),'"+text+"')]")),Duration.ofSeconds(20)
         );
     }
+
+    // Function to select a dropdown option by visible text
+    public static void selectByVisibleText(WebDriver driver, By locator, String visibleText) {
+        try {
+            WebElement dropdownElement = driver.findElement(locator);
+            Select dropdown = new Select(dropdownElement);
+            dropdown.selectByVisibleText(visibleText);
+            System.out.println("Selected option: " + visibleText);
+        } catch (Exception e) {
+            System.out.println("Error selecting option by visible text: " + e.getMessage());
+        }
+    }
+
+    // Function to select a dropdown option by value
+    public static void selectByValue(WebDriver driver, By locator, String value) {
+        try {
+            WebElement dropdownElement = driver.findElement(locator);
+            Select dropdown = new Select(dropdownElement);
+            dropdown.selectByValue(value);
+            System.out.println("Selected option with value: " + value);
+        } catch (Exception e) {
+            System.out.println("Error selecting option by value: " + e.getMessage());
+        }
+    }
+
+    // Function to select a dropdown option by index
+    public static void selectByIndex(WebDriver driver, By locator, int index) {
+        try {
+            WebElement dropdownElement = driver.findElement(locator);
+            Select dropdown = new Select(dropdownElement);
+            dropdown.selectByIndex(index);
+            System.out.println("Selected option at index: " + index);
+        } catch (Exception e) {
+            System.out.println("Error selecting option by index: " + e.getMessage());
+        }
+    }
 }

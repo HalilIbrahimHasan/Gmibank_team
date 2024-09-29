@@ -8,7 +8,7 @@ Feature: validate country db data
   Scenario Outline: read country data from db
     Given user provides the query as "<query>" and "<columnName>"
     And user validates all db data
-    Then user prints them on the pdf and close connection
+
 
 
     Examples: read the data

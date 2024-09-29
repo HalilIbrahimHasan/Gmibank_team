@@ -8,7 +8,7 @@ Feature: db users
 
     Given user provides the query as "<query>" and "<columnName>"
     And user validates all db data
-    Then user prints them on the pdf and close connection
+
 
 
     Examples: read the data
